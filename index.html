@@ -30,7 +30,7 @@
     <link rel="stylesheet" href="./assets/css/styles.css">
 
   </head>
-  <body ng-controller="SismoAppController">
+  <body ng-controller="SismoAppController" class="animate__animated animate__fadeIn">
 
     <header>
       <div class="headerApp">
@@ -62,7 +62,7 @@
                                                                          'text-bg-warning': data.magnitud >= 5 && data.magnitud < 7,
                                                                          }">
             <div class="card-header text-bg-dark">
-              <i class="fa-solid fa-location-dot"></i> {{ data.refGeografica }}
+              <i class="fa-solid fa-location-dot"></i> {{ data.lugar}}
               <span ng-if="data.hoy" class="tag">Hoy</span>
             </div>
             <div class="card-body">
@@ -74,6 +74,8 @@
             <ul class="list-group list-group-flush">
               <li class="list-group-item"><span class="fw-bolder">Fecha y hora:</span> {{ data.fecha }} - {{ data.hora }}</li>
               <li class="list-group-item"><span class="fw-bolder">Profundidad:</span> {{ data.profundidad }}</li>
+              <li class="list-group-item"><span class="fw-bolder">Lugar:</span> {{ data.lugar }}</li>
+              <li class="list-group-item"><span class="fw-bolder">Referencia Geográfica:</span> {{ data.refGeografica}}</li>
             </ul>
 
             </div>
