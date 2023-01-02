@@ -1,5 +1,3 @@
-@import url(../../components/header/header.css);
-
 :root {
   --tag-bg: #cff4fc;
   --tag-text: #087990;
@@ -29,4 +27,19 @@
   padding: 10px 0;
   text-align: center;
   text-decoration: none;
+}
+
+
+.headerApp {
+    color: white;
+    background-color: #212529;
+    border-radius: 0 0 20px 20px;
+}
+
+.headerApp-body {
+    padding: 40px;
+}
+
+.headerApp-text, .headerApp-title {
+    margin: 0;
 }
