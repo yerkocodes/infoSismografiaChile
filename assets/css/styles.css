@@ -1,0 +1,17 @@
+:root {
+  --tag-bg: #cff4fc;
+  --tag-text: #087990;
+}
+
+.tag {
+  color: var(--tag-text);
+  border: 2px solid var(--tag-text);
+  border-radius: 5px;
+  background-color: var(--tag-bg);
+  padding: 1px 5px;
+  margin: 0px 5px;
+}
+
+.tag-primary {
+
+}
