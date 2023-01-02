@@ -1,0 +1,13 @@
+.headerApp {
+    color: white;
+    background-color: #212529;
+    border-radius: 0 0 20px 20px;
+}
+
+.headerApp-body {
+    padding: 40px;
+}
+
+.headerApp-text, .headerApp-title {
+    margin: 0;
+}

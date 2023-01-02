@@ -3,6 +3,9 @@ app
   .controller('SismoAppController', function($scope, $http) {
     $scope.dataCurrentSismos = [];
     $scope.currentDate = new Date();
+    
+    $scope.headerPathHtml = "components/header/header.html";
+    $scope.navbarPathHtml = "components/navbar/navbar.html";
 
     $scope.init = function() {
       $scope.dataCurrentSismos = $scope.getUltimosSismos();

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="sismoApp">
   <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="shortcut icon" href="./assets/img/circle-exclamation-solid.svg" type="image/x-icon">
     <title>SismoApp</title>
@@ -14,12 +15,13 @@
 
   </head>
   <body ng-controller="SismoAppController">
-    <header class="container mx-auto text-center p-5">
-      <h2>Últimos sismos</h2>
-    </header>
 
-    <section class="text-center mb-5">
-      <button type="button" class="btn btn-primary btn-sm" ng-click="init()">Actualizar</button>
+    <!-- <nav ng-include="navbarPathHtml" class="navbar bg-dark" data-bs-theme="dark"></nav> -->
+
+    <header ng-include="headerPathHtml"></header>
+
+    <section class="reloadBtnApp text-center mb-5">
+      <button type="button" class="" ng-click="init()">Actualizar</button>
     </section>
 
     <div class="container" ng-init="init()">
