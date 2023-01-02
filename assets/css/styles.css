@@ -3,6 +3,10 @@
   --tag-text: #087990;
 }
 
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
 .tag {
   color: var(--tag-text);
   border: 2px solid var(--tag-text);
@@ -29,7 +33,6 @@
   text-decoration: none;
 }
 
-
 .headerApp {
   color: white !important;
   background-color: #212529 !important;
@@ -37,7 +40,8 @@
 }
 
 .headerApp-body {
-  padding: 40px !important;
+  padding-top: 40px;
+  padding-bottom: 60px;
 }
 
 .headerApp-text, .headerApp-title {
