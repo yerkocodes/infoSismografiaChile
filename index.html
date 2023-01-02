@@ -66,11 +66,18 @@
               <span ng-if="data.hoy" class="tag">Hoy</span>
             </div>
             <div class="card-body">
-              <h5 class="card-title mb-3">Magnitud: {{ data.magnitud }}</h5>
-              <p class="card-text"><span class="fw-bolder">Fecha y hora:</span> {{ data.fecha }} - {{ data.hora }}</p>
-              <p class="card-text"><span class="fw-bolder">Profundidad:</span> {{ data.profundidad }}</p>
-              <!--<p class="card-text"><span class="fw-bolder">Última actualización:</span> {{ data.fechaUpdate }}</p>-->
+              <h5 class="card-title mb-3"><span class="fw-bolder">Magnitud:</span> {{ data.magnitud }}</h5>
+
+              <!--<p class="card-text"><span class="fw-bolder">Fecha y hora:</span> {{ data.fecha }} - {{ data.hora }}</p>-->
+              <!--<p class="card-text"><span class="fw-bolder">Profundidad:</span> {{ data.profundidad }}</p>-->
+
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><span class="fw-bolder">Fecha y hora:</span> {{ data.fecha }} - {{ data.hora }}</li>
+              <li class="list-group-item"><span class="fw-bolder">Profundidad:</span> {{ data.profundidad }}</li>
+            </ul>
+
             </div>
+
           </div>
         </div>
       </section>
