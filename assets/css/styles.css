@@ -31,15 +31,15 @@
 
 
 .headerApp {
-    color: white;
-    background-color: #212529;
-    border-radius: 0 0 20px 20px;
+  color: white !important;
+  background-color: #212529 !important;
+  border-radius: 0 0 20px 20px !important;
 }
 
 .headerApp-body {
-    padding: 40px;
+  padding: 40px !important;
 }
 
 .headerApp-text, .headerApp-title {
-    margin: 0;
+  margin: 0 !important;
 }
