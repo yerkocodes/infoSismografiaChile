@@ -1,7 +1,4 @@
-:root {
-  --tag-bg: #cff4fc;
-  --tag-text: #087990;
-}
+@import "./colorVariables.css";
 
 body {
   font-family: 'Open Sans', sans-serif;
@@ -23,7 +20,7 @@ body {
 }
 
 .reloadBtnApp button {
-  background-color: #ecf8ff; /* Green */
+  background-color: var(--bg-white);
   border: 2px solid #212529;
   color: #212529;
   width: 100%;
@@ -35,7 +32,7 @@ body {
 
 .headerApp {
   color: white !important;
-  background-color: #212529 !important;
+  background-color: var(--gray-dark) !important;
   border-radius: 0 0 20px 20px !important;
 }
 

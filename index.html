@@ -35,9 +35,10 @@
     <header>
       <div class="headerApp">
         <div class="container headerApp-body">
-          <p class="headerApp-text">Bienvenido a</p>
-          <h1 class="headerApp-title">SismoApp Chile</h1>
-          <p class="headerApp-text">Registro de los últimos sismos localizados en Chile</p>
+          <!--<p class="headerApp-text">Bienvenido a</p>-->
+          <h1 class="headerApp-title">Sismos en Chile</h1>
+          <!--<p class="headerApp-text">Registro de los últimos {{ dataCurrentSismos.length }} sismos registrados en Chile.</p>-->
+          <p class="headerApp-text">Despliegue de información sobre los últimos {{dataCurrentSismos.length + " "}}sismos registrados en Chile por la API de Gael.</p>
         </div>
       </div>
     </header>
@@ -58,24 +59,24 @@
 
         <div class="mb-3" ng-repeat="data in dataCurrentSismos">
           <div class="card border-dark animate__animated animate__fadeIn" ng-class="{
-                                                                         'text-bg-danger': data.magnitud > 7,
-                                                                         'text-bg-warning': data.magnitud >= 5 && data.magnitud < 7,
-                                                                         }">
+                                                                                     'text-bg-danger': data.magnitud >= 7,
+                                                                                     'text-bg-warning': data.magnitud >= 5,
+                                                                                     }">
             <div class="card-header text-bg-dark">
               <i class="fa-solid fa-location-dot"></i> {{ data.lugar}}
               <span ng-if="data.hoy" class="tag">Hoy</span>
             </div>
-            <div class="card-body">
+            <div class="card-body" ng-class="{'text-light': data.magnitud >= 7}">
               <h5 class="card-title mb-3"><span class="fw-bolder">Magnitud:</span> {{ data.magnitud }}</h5>
 
               <!--<p class="card-text"><span class="fw-bolder">Fecha y hora:</span> {{ data.fecha }} - {{ data.hora }}</p>-->
               <!--<p class="card-text"><span class="fw-bolder">Profundidad:</span> {{ data.profundidad }}</p>-->
 
             <ul class="list-group list-group-flush">
-              <li class="list-group-item"><span class="fw-bolder">Fecha y hora:</span> {{ data.fecha }} - {{ data.hora }}</li>
-              <li class="list-group-item"><span class="fw-bolder">Profundidad:</span> {{ data.profundidad }}</li>
-              <li class="list-group-item"><span class="fw-bolder">Lugar:</span> {{ data.lugar }}</li>
-              <li class="list-group-item"><span class="fw-bolder">Referencia Geográfica:</span> {{ data.refGeografica}}</li>
+              <li class="list-group-item bg-transparent" ng-class="{'text-light': data.magnitud >= 7}"><span class="fw-bolder">Fecha y hora:</span> {{ data.fecha }} - {{ data.hora }}</li>
+              <li class="list-group-item bg-transparent" ng-class="{'text-light': data.magnitud >= 7}"><span class="fw-bolder">Profundidad:</span> {{ data.profundidad }}</li>
+              <li class="list-group-item bg-transparent" ng-class="{'text-light': data.magnitud >= 7}"><span class="fw-bolder">Lugar:</span> {{ data.lugar }}</li>
+              <li class="list-group-item bg-transparent" ng-class="{'text-light': data.magnitud >= 7}"><span class="fw-bolder">Referencia Geográfica:</span> {{ data.refGeografica}}</li>
             </ul>
 
             </div>
