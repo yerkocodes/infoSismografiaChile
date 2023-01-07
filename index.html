@@ -51,7 +51,11 @@
 
       <section>
 
-        <div ng-if="dataCurrentSismos == null" class="d-flex justify-content-center">
+        <div class="alert alert-warning" role="alert">
+          {{ dataErrorMessages }}
+        </div>
+
+        <div ng-if="dataCurrentSismos == null && dataErrorMessages == null" class="d-flex justify-content-center">
           <div class="spinner-border" role="status">
             <span class="visually-hidden">Loading...</span>
           </div>
@@ -62,6 +66,8 @@
                                                                                      'text-bg-danger': data.magnitud >= 7,
                                                                                      'text-bg-warning': data.magnitud >= 5,
                                                                                      }">
+
+            {{ compareBetweenTwoTimes(data.hora) }}
             <div class="card-header text-bg-dark">
               <i class="fa-solid fa-location-dot"></i> {{ data.lugar}}
               <span ng-if="data.hoy" class="tag">Hoy</span>
@@ -73,7 +79,7 @@
               <!--<p class="card-text"><span class="fw-bolder">Profundidad:</span> {{ data.profundidad }}</p>-->
 
             <ul class="list-group list-group-flush">
-              <li class="list-group-item bg-transparent" ng-class="{'text-light': data.magnitud >= 7}"><span class="fw-bolder">Fecha y hora:</span> {{ data.fecha }} - {{ data.hora }}</li>
+              <li class="list-group-item bg-transparent" ng-class="{'text-light': data.magnitud >= 7}"><span class="fw-bolder">Fecha y hora:</span> {{ data.fecha }} - {{ data.hora + ' hrs.' }}</li>
               <li class="list-group-item bg-transparent" ng-class="{'text-light': data.magnitud >= 7}"><span class="fw-bolder">Profundidad:</span> {{ data.profundidad }}</li>
               <li class="list-group-item bg-transparent" ng-class="{'text-light': data.magnitud >= 7}"><span class="fw-bolder">Lugar:</span> {{ data.lugar }}</li>
               <li class="list-group-item bg-transparent" ng-class="{'text-light': data.magnitud >= 7}"><span class="fw-bolder">Referencia Geográfica:</span> {{ data.refGeografica}}</li>

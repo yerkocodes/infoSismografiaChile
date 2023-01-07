@@ -2,6 +2,7 @@ let app = angular.module('sismoApp', []);
 app
   .controller('SismoAppController', function($scope, $http) {
     $scope.dataCurrentSismos = [];
+    $scope.dataErrorMessages = null;
     $scope.currentDate = new Date();
     $scope.jsonComunas = JSON.stringify({
       "regiones": [
@@ -104,6 +105,7 @@ app
         url: 'https://api.gael.cloud/general/public/sismos'
       })
         .then(function successCallback(response) {
+          $scope.dataErrorMessages = null;
 
           if(response.status == 200) {
             $scope.dataCurrentSismos = response.data.map(e => {
@@ -115,7 +117,7 @@ app
 
               return {
                 fecha: dateFormated.charAt(0).toUpperCase() + dateFormated.slice(1),
-                hora: `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()} hrs.`,
+                hora: `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`,
                 fechaUpdate: `${actualizacionFormated} - ${actualizacion.getHours()}:${actualizacion.getMinutes()}:${actualizacion.getSeconds()} hrs.`,
                 magnitud: parseFloat(e.Magnitud),
                 profundidad: e.Profundidad + " km",
@@ -127,6 +129,7 @@ app
           }
         }, function errorCallback(error) {
           console.log(error);
+          $scope.dataErrorMessages = "Lo sentimos, ha ocurrido un error con la obtención de la data o se ha sobrepasado el límite de consultas. Por favor reinentente más tarde.";
         });
     }
 
@@ -138,6 +141,33 @@ app
         result = true
       }
       return result;
+    }
+
+    $scope.compareBetweenTwoTimes = function(t1, t2) {
+      let ct = $scope.currentDate;
+      let result = null;
+
+      //console.log(`${ct.getHours()}:${ct.getMinutes()}:${ct.getSeconds() < 10 ? '0'+ct.getSeconds() : ct.getSeconds()}`);
+
+      //var time_start = new Date();
+      //var time_end = new Date();
+
+      //var value_start = "06:00:00".split(':');
+      //var value_end = "07:00:00".split(':');
+
+      //time_start.setHours(value_start[0], value_start[1], value_start[2], 0);
+      //time_end.setHours(value_end[0], value_end[1], value_end[2], 0);
+
+      //result = $scope.millisToMinutesAndSeconds( time_end - time_start ); // millisecond 
+
+
+      return result;
+    }
+
+    $scope.millisToMinutesAndSeconds = function(millis) {
+      //var minutes = Math.floor(millis / 60000);
+      //var seconds = ((millis % 60000) / 1000).toFixed(0);
+      //return minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
     }
 
   });

@@ -1,0 +1,14 @@
+.headerApp {
+  color: white !important;
+  background-color: var(--gray-dark) !important;
+  border-radius: 0 0 20px 20px !important;
+}
+
+.headerApp-body {
+  padding-top: 40px;
+  padding-bottom: 60px;
+}
+
+.headerApp-text, .headerApp-title {
+  margin: 0 !important;
+}
