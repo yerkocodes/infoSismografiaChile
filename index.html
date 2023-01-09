@@ -51,7 +51,7 @@
 
       <section>
 
-        <div class="alert alert-warning" role="alert">
+        <div ng-if="dataErrorMessages != null && dataErrorMessages != ''" class="alert alert-warning" role="alert">
           {{ dataErrorMessages }}
         </div>
 
